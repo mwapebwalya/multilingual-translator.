@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Translator</h1>
+
+        <div class="translator">
+            <!-- Input Panel -->
+            <div class="panel input-panel">
+                <div class="language-row">
+                    <select id="sourceLang">
+                        <option value="detect">Detect Language</option>
+                        <option value="en">English</option>
+                        <option value="fr">French</option>
+                    </select>
+                    <div class="panel-buttons">
+                        <button id="speakSource" title="Listen to original"><i class="fas fa-volume-up"></i></button>
+                        <button id="copySource" title="Copy original"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                <textarea id="sourceText" placeholder="Enter text..." maxlength="500"></textarea>
+                <div class="char-count"><span id="charCount">0</span>/500</div>
+            </div>
+
+            <!-- Swap Button -->
+            <div class="swap-button">
+                <button id="swapLang" title="Swap languages"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="panel output-panel">
+                <div class="language-row">
+                    <select id="targetLang">
+                        <option value="en">English</option>
+                        <option value="fr" selected>French</option>
+                    </select>
+                    <div class="panel-buttons">
+                        <button id="speakTarget" title="Listen to translation"><i class="fas fa-volume-up"></i></button>
+                        <button id="copyTarget" title="Copy translation"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                <div id="targetText" class="output-text"></div>
+            </div>
+        </div>
+
+        <!-- Action Row -->
+        <div class="action-row">
+            <button id="translateBtn" class="translate-btn">Translate</button>
+            <div id="loading" class="loading hidden">🔄 Translating...</div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMsg" class="error hidden"></div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <button id="darkModeToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
